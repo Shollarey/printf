@@ -1,29 +1,29 @@
 #include "main.h"
-
 /**
- * printf_string - Print a string.
- * @args: Argument.
- * Return: The length of the string.
+ * printf_string - print a string.
+ * @val: argumen t.
+ * Return: the length of the string.
  */
-int printf_string(va_list args)
-{
-    char *str;
-    int i, length;
 
-    str = va_arg(args, char *);
-    if (str == NULL)
-    {
-        str = "(null)";
-        length = _strlen(str);
-        for (i = 0; i < length; i++)
-            _putchar(str[i]);
-        return (length);
-    }
-    else
-    {
-        length = _strlen(str);
-        for (i = 0; i < length; i++)
-            _putchar(str[i]);
-        return (length);
-    }
+int printf_string(va_list val)
+{
+	char *s;
+	int i, len;
+
+	s = va_arg(val, char *);
+	if (s == NULL)
+	{
+		s = "(null)";
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
+	}
+	else
+	{
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
+	}
 }
