@@ -5,8 +5,8 @@ int _printf(const char *format, ...);
 int printf_char(va_list args);
 int printf_string(va_list args);
 <<<<<<< HEAD
-int print_i(va_list args);
-int print_d(va_list args);
+int printf_i(va_list args);
+int printf_d(va_list args);
 =======
 int print_37(void);
 
