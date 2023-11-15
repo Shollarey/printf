@@ -1,0 +1,119 @@
+.\" _printf Man Page
+.\" 
+.\" 
+.\" 
+.\" 
+.\" 
+.TH _PRINTF "August 05 2022" "0.1" "Library Functions Manual"
+
+.SH NAME
+.SH ""
+
+.B _printf
+- A custom version of the printf function.
+
+.SH SYNOPSIS
+.SH ""
+
+#include "main.h"
+
+int _printf(const char *FORMAT, ...);
+
+.SH DESCRIPTION
+.SH ""
+
+The printf function sends formatted output to stdout. Cohort #8 students Nicks Gitobu and Musa Parsanka developed a custom _printf() for learning purposes. The _printf() function's format string is a character string, beginning and ending in its initial shift state, if any. These arguments are inserted using the '%' operator.
+
+.SS Compilation
+
+.P
+.RS
+#include "main.h"
+
+$ gcc -Wall -Werror -Wextra -pedantic -Wno-format *.c
+$ gcc -Wall -Werror -Wextra -pedantic -g -Wno-format *.c (for gdb debugging)
+.RE
+
+.SS Printing
+.RS
+
+int _printf(const char *FORMAT, ...);
+
+FORMAT is the string that takes n specifier followed by a '%' symbol. For example, "Hello, this is %s from %d cohort". '...' represents variadic arguments (any type of variable).
+
+.SS Example
+
+.RS
+
+.B Input
+.PP
+_printf("Hello, this is %s from %d cohort\\n\\", 33);
+.PP
+.B Output
+.PP
+Hello, this is %s from %d cohort
+.RE
+
+.SS Return Value
+
+The return value is the number of characters, excluding NULL.
+
+.SH FLAG SPECIFIERS
+.SH ""
+
+Custom and non-custom specifier modifiers.
+
+.SH THE LENGTH MODIFIERS
+.SH ""
+
+Length modifiers.
+
+.SH THE CONVERSION SPECIFIERS
+.SH ""
+
+.RS
+Current arguments handled by conversion specifiers:
+
+.IT
+.B %
+- The % symbol is set without an argument, and the conversion specification has to be '%%'.
+
+.IT
+.B c
+- Integer or char argument converted to unsigned char.
+
+.IT
+.B d, i
+- Int argument is converted to a signed decimal integer.
+
+.IT
+.B s
+- String argument. _printf handles the s conversion specifier if the argument value is not a pointer to a literal string.
+
+.IT
+.B o, u, x, X
+- Unsigned int argument converted to unsigned octal (o), unsigned decimal (u), unsigned hexadecimal notation (x) for lower case, and (X) for upper case.
+
+.IT
+.B b
+- The unsigned int argument is converted to binary.
+
+.IT
+.B p
+- The pointer is printed in hexadecimal format preceded by '0x'.
+
+.IT
+.B r, R
+- 'r' prints the string in reverse. 'R' prints encrypted rot13.
+
+.IT
+.B S
+- ASCII <32 & >127 has to appear in the argument string, converted to hexadecimal preceded by \x.
+.RE
+
+.P
+
+.SH "AUTHORS"
+.SH ""
+
+Olusola Aremu and Damilola Onanuga
